@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: Order Inventory Service
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, health
+  metrics:
+    enable:
+      http: true
+      jvm: true
+      logback: true
+      processor: true
+      system: true
